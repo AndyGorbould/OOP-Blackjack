@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 class Player {
 
-    private $cards = [];
-    private $lost = False;
+    private array $cards = [];
+    private bool $lost = False;
     
     
     public function __construct(Blackjack $deck)
         {
             $this->deck = $deck
-            // $cardOne = Deck::drawCard();
-            // $cardTwo = Deck::drawCard();
+            $cards = new Card();
             
-            public function drawCard(): Deck; {
-                return $cards = &$this->card;
-            }
+
+            $cards = $newCard->drawCard($deck);
+
+
         }
     
 
@@ -31,10 +31,10 @@ class Player {
         return $lost = True;   
     }
     
-    public function getScore()
+    public function getScore($cardOne, $cardTwo)
     {
         foreach ($cards as $card) {
-            getValue();
+            getRawValue();
             // combine values, if>21 return $lost = True, if<=21 return $lost = False (win) 
 
         }

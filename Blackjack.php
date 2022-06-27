@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 class Blackjack {
 
-    private $player = "";
-    private $dealer = "";
-    private $deck = "";
+    private array $player = [];
+    private array $dealer = [];
+    private array $deck = [];
 
 
     // Constructor
@@ -15,6 +15,9 @@ class Blackjack {
         $this->dealer = $dealer;
         $this->deck = new Deck; // new deck
         $this->deck->shuffle(); // shuffle method
+        $this->player = array_push($deck[0]);
+        $this->deck = array_shift($deck);
+        
     }
 
 
