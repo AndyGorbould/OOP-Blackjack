@@ -8,14 +8,10 @@ class Player {
     private bool $lost = False;
     
     
-    public function __construct(Blackjack $deck)
+    public function __construct(Deck $deck)
         {
-            $this->deck = $deck
-            $cards = new Card();
-            
-
-            $cards = $newCard->drawCard($deck);
-
+            array_push($this->cards, $deck->drawCard());
+            array_push($this->cards, $deck->drawCard());
 
         }
     
@@ -23,7 +19,7 @@ class Player {
     // Getters
     public function hit()
     {
-        Deck::drawCard();
+        array_push($this->cards, $this->deck->drawCard());
     }
     
     public function surrender()

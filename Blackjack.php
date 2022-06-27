@@ -4,19 +4,17 @@ declare(strict_types=1);
 
 class Blackjack {
 
-    private array $player = [];
-    private array $dealer = [];
-    private array $deck = [];
+    private Player $player;
+    private Player $dealer;
+    private Deck $deck;
 
 
     // Constructor
-    private function __construct(string $player, string $dealer) {
-        $this->player = $player;
-        $this->dealer = $dealer;
+    private function __construct() {
         $this->deck = new Deck; // new deck
         $this->deck->shuffle(); // shuffle method
-        $this->player = array_push($deck[0]);
-        $this->deck = array_shift($deck);
+        $this->player = new Player($this->deck);
+        $this->dealer = new Player($this->deck);
         
     }
 
