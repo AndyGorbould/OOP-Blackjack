@@ -23,10 +23,10 @@ class Player {
         array_push($this->cards, $deck->drawCard());
     }
     
-    public function surrender()
+    public function surrender(): void
     {
         $this->hasLost();
-        return $lost = True;   
+        // return $lost = True;   
     }
     
     public function getScore($cards)

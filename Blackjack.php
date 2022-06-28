@@ -19,12 +19,12 @@ class Blackjack {
     }
 
 
-    // Getters
-    public function getPlayer() {
+    // Getters (return object??)
+    public function getPlayer():object {
         return $this->player;
     }
 
-    public function getDealer() {
+    public function getDealer():object {
         return $this->dealer;
     }
 
