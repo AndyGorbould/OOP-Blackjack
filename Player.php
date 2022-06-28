@@ -6,6 +6,7 @@ class Player {
 
     private array $cards = [];
     private bool $lost = False;
+    private int $score = 0;
     
     
     public function __construct(Deck $deck)
@@ -17,27 +18,39 @@ class Player {
     
 
     // Getters
-    public function hit()
+    public function hit($deck)
     {
-        array_push($this->cards, $this->deck->drawCard());
+        array_push($this->cards, $deck->drawCard());
     }
     
     public function surrender()
     {
+        $this->hasLost();
         return $lost = True;   
     }
     
-    public function getScore($cardOne, $cardTwo)
+    public function getScore($cards)
     {
+        
         foreach ($cards as $card) {
-            getRawValue();
-            // combine values, if>21 return $lost = True, if<=21 return $lost = False (win) 
+            $score = $this->score + $this->card->getRawValue();
+        };
 
+        // combine values, if>21 return $lost = True, if<=21 return $lost = False (win)
+        if ($this->score > 21) {
+            return $this->hasLost();
+        }
+        if ($this->score === 21) {
+            echo "You win!";
+        }
+        else {
+            return $score;
         }
     }
     
     public function hasLost()
     {
+        echo "You lose :(";
         return $lost = True;   
     }
 

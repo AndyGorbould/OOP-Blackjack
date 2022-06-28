@@ -10,7 +10,7 @@ class Blackjack {
 
 
     // Constructor
-    private function __construct() {
+    public function __construct() {
         $this->deck = new Deck; // new deck
         $this->deck->shuffle(); // shuffle method
         $this->player = new Player($this->deck);
