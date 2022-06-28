@@ -54,6 +54,10 @@ class Player {
         return $lost = True;   
     }
 
+    public function cards()
+    {
+        return $this->cards;
+    }
 
 
 }
