@@ -21,11 +21,13 @@ class Player {
     public function hit($deck)
     {
         array_push($this->cards, $deck->drawCard());
+        $this->getScore($this->cards);
     }
     
     public function surrender(): void
     {
         $this->hasLost();
+        session_destroy();
         // return $lost = True;   
     }
     

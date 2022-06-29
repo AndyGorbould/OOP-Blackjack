@@ -12,16 +12,13 @@ require 'Deck.php';
 require 'Blackjack.php';
 require 'Player.php';
 
-// $deck = new Deck();
-// $deck->shuffle();
-// foreach($deck->getCards() AS $card) {
-//     echo $card->getUnicodeCharacter(true);
-//     echo '<br>';
-// }
+//vars
+if (!isset($_SESSION['blackjack'])) {
+    $_SESSION['blackjack'] = new Blackjack;
+}
+$blackjack = unserialize(serialize($_SESSION['blackjack']));
 
-$blackjack = new Blackjack;
-$deck = new Deck;
-$player = new Player($deck);
+
 
 // nice var_dump
 echo '<pre>';
@@ -53,12 +50,15 @@ echo '</pre>'
     <form action="" method="post">
 
         <input type="submit" name="hit" value="Hit Me!">
-            <?php
-            // $blackjack->getPlayer()->hit();
-            if(isset($_POST["hit"])) {
-                print_r("Hit button works");
-            }
-            ?>
+        <?php
+        // $blackjack->getPlayer()->hit();
+        if (isset($_POST["hit"])) {
+            print_r("Hit button works");
+            // $_SESSION['blackjack']->getPlayer()->hit($deck());
+            // $player->hit($deck);
+            var_dump($blackjack->getPlayer());
+        }
+        ?>
         </input>
     </form>
 
